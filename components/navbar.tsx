@@ -15,10 +15,6 @@ export const NAVLINKS = [
     title: "Docs",
     href: `/docs/${page_routes[0].href}`,
   },
-  {
-    title: "Blog",
-    href: "https://blog.abhiroop.me",
-  },
 ];
 
 export function Navbar() {

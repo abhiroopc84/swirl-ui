@@ -5,12 +5,15 @@ import remarkGfm from "remark-gfm";
 import rehypePrism from "rehype-prism-plus";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
+import rehypePrettyCode from "rehype-pretty-code";
 import rehypeCodeTitles from "rehype-code-titles";
+import rehypeMdxCodeProps from 'rehype-mdx-code-props'
 import { page_routes } from "./routes-config";
 import { visit } from "unist-util-visit";
 
 // custom components imports
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {EvervaultCardExample, EvervaultCardCode} from "@/components/examples/evervault-card-example";
 import Pre from "@/components/pre";
 
 type MdxFrontmatter = {
@@ -24,6 +27,8 @@ const components = {
   TabsContent,
   TabsList,
   TabsTrigger,
+  EvervaultCardExample,
+  EvervaultCardCode,
   pre: Pre,
 };
 
@@ -43,6 +48,8 @@ export async function getMarkdownForSlug(slug: string) {
             rehypeSlug,
             rehypeAutolinkHeadings,
             postProcess,
+            rehypePrettyCode,
+            rehypeMdxCodeProps,
           ],
           remarkPlugins: [remarkGfm],
         },
