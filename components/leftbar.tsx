@@ -11,7 +11,6 @@ import {
 import { Logo, NAVLINKS } from "./navbar";
 import { Button } from "./ui/button";
 import { AlignLeftIcon } from "lucide-react";
-import { FooterButtons } from "./footer";
 
 export function Leftbar() {
   return (
@@ -97,9 +96,6 @@ export function SheetLeftbar() {
                 </div>
               );
             })}
-          </div>
-          <div className="p-8 pb-4 flex gap-2">
-            <FooterButtons />
           </div>
         </ScrollArea>
       </SheetContent>
